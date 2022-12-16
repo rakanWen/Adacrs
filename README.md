@@ -44,25 +44,6 @@ bash scripts/preprocess.sh
 bash scripts/train.sh
 ```
 
-基础DQN训练流程：
-1. 用随机的网络参数$\omega$初始化$Q_{\omega}(s,a)$网络 
-2. 复制相同的参数$\omega^- \gets \omega$来初始化目标网络$Q_{\omega^-}$ 
-3. 初始化经验回放池子$R$ 
-4. **for** 序列$e=1 \rightarrow E$ **do** ```Trainer```
-&ensp; &ensp; 获取环境初始状态$s_1$ ```Env```中实现
-&ensp; &ensp; **for** 时间步 $t=1 \rightarrow T$ **do** ```Trainer```
-&ensp; &ensp; &ensp; &ensp; 根据当前网络$Q_{\omega}(s,a)$以贪婪策略选择动作$a_t$ ```select_action function```
-&ensp; &ensp; &ensp; &ensp; 执行动作$a_t$，获得奖励$r_t$，环境状态变成$s_{t+1}$ 
-&ensp; &ensp; &ensp; &ensp; 把$(s_t, a_t, r_t, s_{t+1})$储存到回放池$R$中 
-&ensp; &ensp; &ensp; &ensp; $R$中数据足够后，从$R$中采样$N$个数据$\{(s_i, a_i, r_i, s_{i+1})\}_{i=1,2,...,N}$ 
-&ensp; &ensp; &ensp; &ensp; 对每个数据，用目标网络计算$y_i = r_i + \gamma max_{a} Q_{\omega^-}(s_{i+1},a)$ 
-&ensp; &ensp; &ensp; &ensp; 最小化目标损失$L=\frac{1}{N} \sum_i(y_i-Q_{\omega}(s_i,a_i))^2$, 以此更新当前网络$Q_{\omega}$ ```policy.agent.learn```
-&ensp; &ensp; &ensp; &ensp; 更新目标网络 ```policy.agent.update```
-&ensp; &ensp; **end for**
-**end for**
-
-
-
 #### 重要调参的参数意义
 可以通过```python train.py -h```来查看更多的参数细节
 
