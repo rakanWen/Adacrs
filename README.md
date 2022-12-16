@@ -11,7 +11,7 @@ python==3.7
 ## 数据准备
 开源数据集部分，使用两个基于公开的对话数据集**Yelp**和**LastFM**处理之后的用于CRS的数据
 
-关于这两个数据集以及 **Last_FM*** 与 **Yelp*** 的描述，请参考[数据介绍](https://yuque.antfin.com/docs/share/3b425aef-6b4e-4161-91a4-86b4d544899c?#%20%E3%80%8A%E8%9E%8D%E5%90%88%E4%B8%93%E5%AE%B6%E7%BB%8F%E9%AA%8C%E7%9A%84%E5%AF%B9%E8%AF%9D-%E6%95%B0%E6%8D%AE%E5%8F%8A%E5%8F%82%E8%80%83%E3%80%8B)或[SCPR的数据介绍](https://cpr-conv-rec.github.io/manual.html/#environment-requirement)
+关于这两个数据集以及 **Last_FM*** 与 **Yelp*** 的描述，请参考[SCPR的数据介绍](https://cpr-conv-rec.github.io/manual.html/#environment-requirement)
 
 下载链接：[google drive](https://drive.google.com/file/d/1H75SOzOkps4fYeu9A0qF7voDkPw8cMhE/view?usp=sharing)
 
